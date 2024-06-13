@@ -10,14 +10,16 @@ spring:
         - id: voj-backend-user-service
           uri: lb://voj-backend-user-service  # ???????????nacos???
           predicates:
-            - Path-/api/user/**
+            - Path=/api/user/**
         - id: voj-backend-question-service
           uri: lb://voj-backend-question-service
           predicates:
-            - Path-/api/question/**
+            - Path=/api/question/**
         - id: voj-backend-judge-service
           uri: lb://voj-backend-judge-service
           predicates:
-            - Path-/api/judge/**
+            - Path=/api/judge/**
+  main:
+    web-application-type: reactive
 server:
   port: 8101
